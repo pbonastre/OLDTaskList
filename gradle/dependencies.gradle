@@ -1,0 +1,40 @@
+dependencies {
+    compileOnly("org.springframework.boot:spring-boot-devtools")
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-web'){
+        exclude(module: 'spring-boot-starter-tomcat')
+    }
+     implementation group: 'org.springframework', name: 'spring-test'
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jetty'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+    implementation group: 'io.springfox', name:'springfox-swagger2', version: '2.10.5'
+    implementation group: 'io.springfox', name:'springfox-swagger-ui', version: '2.10.5'
+    implementation group: 'io.springfox', name:'springfox-data-rest', version: '2.10.5'
+
+    //Only if http client is needed
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+     testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.23.4'
+    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.197'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test'
+
+    // MockWebServer
+    testImplementation group: "com.squareup.okhttp3", name: "okhttp", version: '4.0.1'
+    testImplementation group: "com.squareup.okhttp3", name: "mockwebserver", version: '4.0.1'
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.6.3')
+    testImplementation('org.junit.jupiter:junit-jupiter-params:5.6.3')
+    testImplementation('org.junit.platform:junit-platform-runner:1.7.0')
+    testImplementation('org.mockito:mockito-junit-jupiter:2.28.2')
+    testImplementation('org.mock-server:mockserver-netty:5.11.1')
+    testImplementation('org.mock-server:mockserver-junit-rule:5.11.1')
+    testImplementation('org.mock-server:mockserver-junit-jupiter:5.11.1')
+    testImplementation('io.projectreactor:reactor-core:3.3.6.RELEASE')
+    testImplementation('au.com.dius:pact-jvm-consumer-junit_2.12:3.6.15')
+    testImplementation('au.com.dius:pact-jvm-provider-junit_2.12:3.6.15')
+    //testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine'
+}
